@@ -1,4 +1,3 @@
-
 ## 🚀Frequency of each element that occured totally in all subarrays
 ```
 Let’s say A = [1, 2, 3, 4, 5]
