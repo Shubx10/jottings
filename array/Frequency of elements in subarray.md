@@ -1,4 +1,5 @@
 ## 🚀Frequency of each element that occured totally in all subarrays
+`Frequency of element at ith index = (n - i) * (i + 1)`
 ```
 Let’s say A = [1, 2, 3, 4, 5]
 
@@ -26,21 +27,23 @@ Frequency of element at ith index = starting at i + ending at i + i in the middl
                                   = n * (i + 1) - i * (i + 1)
                                   = (n - i) * (i + 1)
 
-Applications - sum of all subarrays of an array, xor sum of subarrays of an array
 ```
-`Frequency of element at ith index = (n - i) * (i + 1)`
+
 ```cpp
 //sum of all subarrays of an array
-long int SubArraySum(vector<int>& arr, int n){
-    long int result = 0;
-    for(int i = 0; i < n; i++){
-        result += (arr[i] * (i + 1) * (n - i));
+class Solution {
+  public:
+      long int SubArraySum(vector<int>& arr, int n){
+        long int result = 0;
+        for(int i = 0; i < n; i++){
+            result += (arr[i] * (i + 1) * (n - i));
+        }
+        return result;
     }
-    return result;
-}
+};
 ```
 ```cpp
-//Xor of values of all subarrays of an array
+//xor of values of all subarrays of an array
 class Solution {
   public:
     int gameOfXor(int n, int A[]){
